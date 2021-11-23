@@ -1,0 +1,72 @@
+HTTP-Protokoll
+-------------------------
+Http-Methoden, z.B. GET und POST
+Http-Statuscodes, 200 OK, 404 not found
+(keine Ports)
+Client-Server-Modell
+----------------------------
+Was ist Client, was Server
+
+
+Django allgemein
+-------------------------------
+Aufbau: Views, Templates, Modell, 
+MVC - Pattrn (in Django MVT (modell, view, template))
+Admin-Oberflaeche
+manage.py Subkommandos (makemigrations, migrate...)
+Was ist die Debug_toolbar? Was kann diese? Wozu benutzen?
+
+
+Django URLS
+--------------
+Reverse Lookup url 'company:company_detail' 3   vs.:  "company/3"   Änderbarkeit der URLs, also des Pfades
+allgemein über die urls.py - Dateien (welche gibt es, wo liegen sie?)
+Was ist ein Slug? Was macht man damit?
+
+
+Django Views
+--------------------
+Controller-Funktionen
+Rückgabewert einer Views
+Request-Objekt
+Response-Objekt
+
+
+Django-Models
+--------------------------------
+Migrationen erstellllen, Migrationsdateien
+der Model-Manafer (Management API), Methoden all() und get()
+ORM  (Object Relation Mapper)
+Shortcuts: get_object_or_404  (wofür gut?), auch: redirect, reverse
+Foreign Keys (related_name, on_delete)        bei on_delete: CASCADE, None, 
+Model-Validierung
+
+
+Querysets
+-----------------------------------------
+filter-Methode, Rückgabewert der Filter-Methode (welcher ist das immer?)
+Syntax zum Filtern
+Filtern von related foreign key Objekten
+Lazyness (was bedeutet es, dass Querysets "lazy" sind?)
+prefetch_releated().  Wozu??  in views.py
+
+
+Templates
+-------------------------------
+Was sind Templates? Wo liegen sie?
+Template Variablen {{x}}
+Template Tags {% for x in y %}
+Was macht extends?
+
+
+Formulare
+------------------------------
+Formular-Validierung (unter forms)
+crsf - Token     (crispy_forms NEIN)
+
+(Tests - NEIN !!)
+
+
+
+ git config --global --unset user.email
+ 
