@@ -111,6 +111,8 @@ https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups
                                 on_delete=models.CASCADE,
                                 related_name='employees')
 
+eine leere Zeile
+
 ### Löschen von Foreign Keys
 > on_delete.SET_NULL => setzt Foreign Key auf Null (dazu muss null=True)
 > on_delete.CASCADE => löscht Kindobjekte
