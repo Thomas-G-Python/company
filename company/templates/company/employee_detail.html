@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!-- das ist ein Kommentar. Das ist die Detailseite eines Employee -->
+
+{% block head %}
+{{employee.last_name}}, {{employee.first_name|slice:"0:2"}}
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'company:single_company_by_slug' employee.company.slug %}">Zurück zur Firma</a>
+
+<p>
+    {{employee.last_name}}{{employee.first_name}}
+</p>
+<p>
+    Firma: {{employee.company}}
+</p>
+<a href="{% url 'company:employee_update' employee.company.slug  employee.id %}">Update Mitarbeiter</a>
+
+{% endblock %}

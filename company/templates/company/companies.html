@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+<!-- Übersicht aller Firmen -->
+
+{% block title %}
+Firmenübersicht
+{% endblock %}
+
+{% block head %}
+Firmenübersicht
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'company:company_add' %}">neue Firma eintragen</a>
+
+{% if companies %}
+<p>
+    Anzahl Firmen im System: {{companies|length}}
+</p>
+
+<p>
+    {% if companies|length >= 4 %}
+    viele Firmen!
+    {% elif companies|length > 3 %}
+    ein paar Firmen
+    {% else %}
+    wenig Firmen
+    {% endif %}
+</p>
+
+
+<ul class="list-group">
+    {% for company in companies %}
+    <a href="{% url 'company:single_company_by_slug' company.slug  %}">
+        <li class="list-group-item list-group-item-info">
+            <b>{{company.name}}</b>
+
+            <span class="badge badge-primary badge-pill">
+                {{company.employees.all|length}}
+            </span>
+            <a href="{% url 'company:company_delete' company.slug %}">[x]</a>
+        </li>
+    </a>
+    {% endfor %}
+</ul>
+{% else %}
+<b>Keine Firmen vorhanden!</b>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- neue Firma eintragen -->
+
+{% block head %}
+Firma updaten: {{comp.name}}
+{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{form|crispy}}
+    <input type="submit" value="Company updaten" />
+
+</form>
+{% endblock %}

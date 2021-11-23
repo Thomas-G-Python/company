@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- neuen Employee eintragen -->
+
+{% block head %}
+neuen Mitarbeiter für {{company.name}} updaten
+{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{form|crispy}}
+    <input type="submit" value="Mitarbeiter eintragen" />
+
+</form>
+{% endblock %}

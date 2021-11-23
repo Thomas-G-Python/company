@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!-- das ist ein Kommentar. Das ist die Detailseite einer Firma -->
+
+{% block head %}
+{{comp.name|lower|slice:":20"}}
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'company:list_companies' %}">zurück zur Firmenübersicht</a>
+
+<h2>{{comp.name|upper}}</h2>
+<h3>{{comp.slogan|truncatechars:13}}</h3>
+{{ value|default:"nothing" }}
+
+<p>
+    {{comp.description|truncatewords:2}}<br>
+    Branche: {{comp.company_type}}<br>
+    Branche: {{comp.get_company_type_display}}<br>
+    Angestellte: {{comp.employees.all|length}}<br>
+    Länge des Firmennamens: {{comp.name|length}}
+</p>
+
+<a href="{% url 'company:company_update' comp.id %}">editieren</a><br>
+<a href="{% url 'company:employee_add' comp.id %}">Mitarbeiter hinzufügen</a>
+
+
+<h2>Mitarbeiter</h2>
+{% for employee in comp.employees.all %}
+<a href="{% url 'company:employee_detail' comp.slug employee.id %}">
+    {{employee.first_name}}, {{employee.last_name}}</a>
+<a class="small" href="{% url 'company:employee_delete' comp.slug employee.id %}">[x]</a><br>
+{% endfor %}
+
+{% comment %} {% url '' %} #{% endcomment %}
+{% endblock %}

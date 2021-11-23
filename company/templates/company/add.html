@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- neue Firma eintragen -->
+
+{% block head %}
+neue Firma eintragen
+{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{form|crispy}}
+    <tr>
+        <th>
+            Form absenden:
+        </th>
+        <td>
+            <input type="submit" value="Company eintragen" />
+        </td>
+    </tr>
+</form>
+{% endblock %}

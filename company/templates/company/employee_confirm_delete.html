@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- Employee löschen -->
+
+{% block head %}
+Employee löschen: {{object.first_name}} {{object.last_name}}
+{% endblock %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p>Willst du diesen Mitarbeiter sicher löschen? "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+<br> oder <br>
+<a href="{% url 'company:single_company_by_slug' object.company.slug %}">
+    zurück zur Firma {{object}}
+</a>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- Firma löschen -->
+
+{% block head %}
+Firma löschen: {{object.name}}
+{% endblock %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p>Willst du das sicher löschen? "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

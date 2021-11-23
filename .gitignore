@@ -1,0 +1,26 @@
+venv/*
+.mypy_cache
+__pycache__
+db.sqlite3
+*.log
+*.pyc
+
+%SystemDrive%
+
+# Visual Studio Code #
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
