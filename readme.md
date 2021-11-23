@@ -160,7 +160,3 @@ pip install factory_boy
 
 Folgende Command erstellen: python manage.py generate_data
 
-# Test
-# Und hiermit aendere ich einfach die readme.txt... :-)
-
-
